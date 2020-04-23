@@ -1,0 +1,13 @@
+import requests
+
+url = "https://api-eu.ariba.com/v2.oauth/token"
+
+payload = 'grant_type=openapi_2lo'
+headers = {
+  'Authorization': 'Basic ',
+  'Content-Type': 'application/x-www-form-urlencoded'
+}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
